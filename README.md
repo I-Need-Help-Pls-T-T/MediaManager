@@ -73,8 +73,8 @@
 * [Вход](./images/Login.png)
 * [Регистрация](./images/Register.png)
 * [Книги](./images/Books.png)
-* [Профиль книги](./images/Books profile.png)
-* [Профиль пользователя](./images/User Profile.png)
+* [Профиль книги](./images/Books_profile.png)
+* [Профиль пользователя](./images/User_Profile.png)
 
 ## 👥 Автор
 
