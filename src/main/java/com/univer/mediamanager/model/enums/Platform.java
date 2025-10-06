@@ -1,4 +1,4 @@
-package com.univer.mediamanager.model;
+package com.univer.mediamanager.model.enums;
 
 import java.util.ArrayList;
 import java.util.List;

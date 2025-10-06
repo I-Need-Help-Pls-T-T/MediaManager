@@ -1,8 +1,8 @@
 package com.univer.mediamanager.model.media;
 
-import com.univer.mediamanager.model.MultiplayerMode;
+import com.univer.mediamanager.model.enums.MultiplayerMode;
 import com.univer.mediamanager.model.common.Person;
-import com.univer.mediamanager.model.Platform;
+import com.univer.mediamanager.model.enums.Platform;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.List;

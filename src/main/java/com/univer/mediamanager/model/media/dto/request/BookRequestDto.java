@@ -20,6 +20,7 @@ public class BookRequestDto extends MediaItemRequestDto {
 
     private String bindingType;
 
+    @Min(value = 0, message = "Возрастной рейтинг не может быть меньше 0")
     private int ageRating;
 
     private int circleRating;

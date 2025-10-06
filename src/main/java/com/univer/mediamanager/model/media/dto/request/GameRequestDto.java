@@ -1,7 +1,7 @@
 package com.univer.mediamanager.model.media.dto.request;
 
-import com.univer.mediamanager.model.MultiplayerMode;
-import com.univer.mediamanager.model.Platform;
+import com.univer.mediamanager.model.enums.MultiplayerMode;
+import com.univer.mediamanager.model.enums.Platform;
 import com.univer.mediamanager.model.common.Person;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -19,14 +19,13 @@ public class GameRequestDto extends MediaItemRequestDto {
 
     private List<Platform> platforms;
 
-    @Min(value = 0, message = "Не может быть меньше 0")
     private int completionTime;
 
-    @Min(value = 0, message = "Time in game cannot be negative")
+    @Min(value = 0, message = "Время не может быть меньше 0")
     private int timeInGame;
 
-    @NotBlank(message = "Publisher cannot be blank")
     private String publisher;
 
+    @NotBlank(message = "Разработчик не может отсутствовать")
     private List<Person> developer;
 }

@@ -1,8 +1,8 @@
 package com.univer.mediamanager.model.media.dto.response;
 
-import com.univer.mediamanager.model.MediaType;
-import com.univer.mediamanager.model.common.Genre;
-import com.univer.mediamanager.model.common.Language;
+import com.univer.mediamanager.model.enums.Genre;
+import com.univer.mediamanager.model.enums.Language;
+import com.univer.mediamanager.model.enums.MediaType;
 import lombok.Data;
 import java.util.List;
 
@@ -18,11 +18,13 @@ public class MediaItemResponseDto {
 
     private int releaseYear;
 
-    private int rating;
+    private double rating;
 
     private List<Language> language;
 
     private List<Genre> genres;
 
     private MediaType mediaType;
+
+    private double boxOffice;
 }

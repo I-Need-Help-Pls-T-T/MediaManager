@@ -1,14 +1,12 @@
-package com.univer.mediamanager.model.foruser;
+package com.univer.mediamanager.model.foruser.dto.response;
 
 import com.univer.mediamanager.model.enums.Status;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
-public class UserMediaStatus {
+@Data
+public class UserMediaStatusResponseDto {
     private Long userId;
 
     private Long mediaItemId;

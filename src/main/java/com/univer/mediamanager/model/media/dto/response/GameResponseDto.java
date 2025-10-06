@@ -1,7 +1,7 @@
 package com.univer.mediamanager.model.media.dto.response;
 
-import com.univer.mediamanager.model.MultiplayerMode;
-import com.univer.mediamanager.model.Platform;
+import com.univer.mediamanager.model.enums.MultiplayerMode;
+import com.univer.mediamanager.model.enums.Platform;
 import com.univer.mediamanager.model.common.Person;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
