@@ -79,4 +79,4 @@
 
 ## 👥 Автор
 
-*   [I-Need-Help-Pls-T-T](https://github.com/I-Need-Help-Pls-T-T) - Разработчик проекта.
+*   [I-Need-Help-Pls-T-T](https:K//github.com/I-Need-Help-Pls-T-T) - Разработчик проекта.
