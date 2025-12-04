@@ -1,7 +1,3 @@
-Here’s the revised **Testing Results** document, updated to reflect that there is currently **no backend** and no unit/integration tests have been run yet. All references to executed backend tests have been removed or clarified, and the focus has been shifted to the **Postman (API) tests** and identified **security issues**:
-
----
-
 # Testing Results for the "Media Manager" System
 
 ## Document Information
@@ -130,3 +126,4 @@ Here’s the revised **Testing Results** document, updated to reflect that there
 - **Test Lead:** I-Need_Help-Pls-T-T
 - **Development:** DreamTeam
 - **Note:** This report is based on **Postman API simulations and design review**. The backend is **not yet implemented**, and no actual unit or integration tests have been executed.
+
