@@ -23,8 +23,8 @@
 - **Critical Issues:** 1 (Admin API Authorization violation).
 - **High-Priority Issues:** 1 (Error in **Average Rating** calculation during concurrent access).
 - **Overall Assessment:** Core functionality (Collection Management, Statuses) is working. However, the presence of **critical defects** in security and key business logic (rating calculation) **blocks** the release.
-
 ---
+
 
 ## 2. Test Execution Overview
 

@@ -1,5 +1,6 @@
 # Media Manager - Glossary of Key Terms
 
+
 This glossary presents the core concepts and terms used in the "Media Manager" project.
 
 ---

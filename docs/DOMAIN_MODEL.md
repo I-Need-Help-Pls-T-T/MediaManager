@@ -1,48 +1,67 @@
-# Domain Model Class Diagram: Media Manager
+# Media Manager - Glossary of Key Terms
 
-## Class Diagram Description
 
-The core logic of the **"Media Manager"** domain is centered around **media items** (catalog), **users** (authentication and collections), and the **relationships** between them (status tracking, comments, and creator information).
+This glossary presents the core concepts and terms used in the "Media Manager" project.
 
-### Main Entities
+![Domain model](./schema/domain.png)
 
-* **`User`**: Represents a system user with account credentials.
-* **`MediaItem`**: An abstract entity that serves as the basis for all content types in the catalog.
-* **`Movie`, `TVShow`, `Book`, `Game`**: Concrete content types that inherit common attributes from `MediaItem`.
-* **`Person`**: Represents a person associated with media items (actor, director, author, etc.).
-* **`UserMediaStatus`**: A Junction entity for tracking a user's personal statuses and ratings for a specific media item.
-* **`Comment`**: Represents a text comment left by a user on a media item.
-* **`Credit`**: A Junction entity for detailing roles, linking `Person` with `MediaItem`.
+## Media Item
 
-### Key Relationships Explained
+A general term for a unit of content cataloged in the system (e.g., Book, Movie, TV Show, Game). It has common attributes such as title, description, release year, and genres.
 
-1.  **MediaItem — Inheritance:**
+## Public Catalog
 
-    * `Movie`, `TVShow`, `Book`, `Game` **inherit** attributes and relationships from `MediaItem`.
+The section of the system containing all **Media Items** added by the **Administrator**. Available for search and filtering by all **Users**.
 
-2.  **User — UserMediaStatus — MediaItem (Many-to-Many):**
+## Personal Collection
 
-    * `User` **(1) -- (0..\*)** `UserMediaStatus`: Each user can track many media items.
-    * `MediaItem` **(1) -- (0..\*)** `UserMediaStatus`: Each media item can be tracked by many users.
-    * *The relationship is implemented via a composite key in the `user_media_status` table.*
+A list of **Media Items** that a **User** has added for personal tracking.
 
-3.  **User — Comment — MediaItem (Many-to-Many):**
+## Media Status
 
-    * `User` **(1) -- (0..\*)** `Comment`: A user can leave many comments.
-    * `MediaItem` **(1) -- (0..\*)** `Comment`: A media item can have many comments.
+An indicator used by the **User** to track the progress of a **Media Item** in their **Personal Collection** (e.g., "Planned", "In Progress", "Finished").
 
-4.  **Person — Credit — MediaItem (Many-to-Many):**
+## Rating
 
-    * `Person` **(1) -- (0..\*)** `Credit`: A person can be associated with many media items.
-    * `MediaItem` **(1) -- (0..\*)** `Credit`: A media item can be associated with many persons (through their roles).
-    * *The relationship is implemented via the junction table `credit`.*
+* **Personal Rating:** A value from 1 to 10 that a **User** assigns to a **Media Item** in their **Personal Collection**.
+* **Average Rating:** The overall aggregated rating of a **Media Item**, calculated based on all users' **Personal Ratings**.
 
-### Attributes
+## Comment
 
-* **`User`**: `id` (PK), `username`, `email`, `password` (Hashed).
-* **`MediaItem` (Base)**: `id` (PK), `title`, `description`, `releaseYear`, `rating` (Avg), `mediaType`, `genres`, `language`, `coverUrl`.
-* **`Movie` (Specific)**: `country`, `runtime`, `budget`.
-* **`UserMediaStatus`**: `id` (Composite PK/FK), `status` (Enum), `rating` (Personal rating), `notes`, `addedDate`, `isFavorite`.
-* **`Person`**: `id` (PK), `name`, `rating` (Avg. Person's rating).
-* **`Comment`**: `id` (PK), `text`, `createdAt`, `user_id` (FK to User), `media_item_id` (FK to MediaItem).
-* **`Credit`**: `id` (PK), `role`, `media_item_id` (FK), `person_id` (FK).
+A text message that a **User** can leave on the page of a **Media Item**.
+
+## Account
+
+The primary unit representing a user in the system. Can have the roles of **Registered User** or **Administrator**.
+
+## Administrator (Admin)
+
+A user with elevated privileges who is responsible for populating and moderating the **Public Catalog** (adding, editing, and deleting **Media Items**).
+
+## Authentication
+
+The process of verifying a **User's** identity, typically by matching a username (or email) and password. Successful authentication leads to the issuance of a session token (**JWT**).
+
+## Authorization
+
+The process of determining and ensuring what actions an **Authenticated User** is permitted to perform (e.g., adding media to a collection, or, for an **Administrator**, managing the catalog).
+
+---
+
+## Technical Terms
+
+## Controller
+
+A component that provides the **REST API** interface, which processes incoming client requests, calls the **Business Logic**, and returns responses.
+
+## Service
+
+A component that encapsulates the core **Business Logic** of the application (e.g., calculating the **Average Rating** or changing media status), working with entities and **DTOs**.
+
+## DTO (Data Transfer Object) / Mapper
+
+An object used to transfer data between subsystems (e.g., between the **Controller** and the **Service**). The **Mapper** is responsible for transforming between entity objects and **DTOs**.
+
+## JWT (JSON Web Token)
+
+A compact, URL-safe token, typically used to securely transmit information between parties as a JSON object, usually serving as an **Authentication** mechanism.
