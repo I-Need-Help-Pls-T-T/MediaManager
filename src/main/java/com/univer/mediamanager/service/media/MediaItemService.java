@@ -119,4 +119,17 @@ public class MediaItemService {
                 .map(mediaItemMapper::toResponseDto)
                 .toList();
     }
+
+    @Transactional(readOnly = true)
+    public Optional<MediaItem> getById(Long id) {
+        return mediaItemRepository.findById(id);
+    }
+
+//    @Transactional(readOnly = true)
+//    public int findByAgeRatingGreaterThanEqual(int ageRating) {
+////        return mediaItemRepository.findByRatingGreaterThanEqual(rating)
+////                .stream()
+////                .map(mediaItemMapper::toResponseDto)
+////                .toList();
+//    }
 }

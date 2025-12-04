@@ -3,7 +3,7 @@ package com.univer.mediamanager.service.media;
 import com.univer.mediamanager.model.media.Movie;
 import com.univer.mediamanager.model.media.dto.request.MovieRequestDto;
 import com.univer.mediamanager.model.media.dto.response.MovieResponseDto;
-import com.univer.mediamanager.repository.media.MovieRepository;
+import com.univer.mediamanager.repository.media.movie.MovieRepository;
 import com.univer.mediamanager.service.media.mapper.MovieMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

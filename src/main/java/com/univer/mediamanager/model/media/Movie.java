@@ -19,9 +19,6 @@ public class Movie extends MediaItem {
 
     private int budget;
 
-    @Column(name = "age_rating")
-    private int ageRating;
-
     @ManyToMany
     @JoinTable(
             name = "movie_directors",

@@ -48,4 +48,7 @@ public class MediaItem {
 
     @Column(name = "box_office")
     private double boxOffice;
+
+    @Column(name = "age_rating")
+    private int ageRating;
 }
